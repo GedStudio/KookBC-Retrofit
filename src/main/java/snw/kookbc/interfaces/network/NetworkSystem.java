@@ -18,15 +18,15 @@
 
 package snw.kookbc.interfaces.network;
 
-import java.util.List;
-import java.util.concurrent.ConcurrentLinkedQueue;
-
 import snw.kookbc.impl.network.Frame;
 import snw.kookbc.interfaces.Lifecycle;
+import snw.kookbc.util.ConcurrentLinkedBlockingQueue;
+
+import java.util.List;
 
 public interface NetworkSystem extends Lifecycle {
 
-    ConcurrentLinkedQueue<Frame> getMessageQueue();
+    ConcurrentLinkedBlockingQueue<Frame> getMessageQueue();
 
     List<Frame> getWrongOrderFrames();
 }
